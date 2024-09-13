@@ -3,11 +3,20 @@ import { styled } from 'styled-components' //package styled Comoponent
 
 //Wir erstellen uns eine Componente mit diesem style und verwenden dann unten diese
 const ControlContainer = styled.div`
-
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+`
+
+const Label = styled.label`
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b7280;
 
 `
 
@@ -34,8 +43,9 @@ export default function AuthInputs() {
   return (
     <div id="auth-inputs">
       <ControlContainer>
-        <p>
-          <label>Email</label>
+        <p className="paragraph"> 
+          {/* Tagged Element --> ${} */}
+          <Label className={`label ${emailNotValid ? 'invalid' : ''}`}>Email</Label>
           <input
             type="email"
             className={emailNotValid ? 'invalid' : undefined}
@@ -49,7 +59,7 @@ export default function AuthInputs() {
           />
         </p>
         <p>
-          <label>Password</label>
+          <Label className={`label ${emailNotValid ? 'invalid' : ''}`}>Password</Label>
           <input
             type="password"
             className={passwordNotValid ? 'invalid' : undefined}
