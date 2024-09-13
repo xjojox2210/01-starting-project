@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: { //extends supported list of fonts
+        title: ['"Pacifico"', 'cursive'] //wir haben jetzt eine font-title Klasse
+      }
+    },
   },
   plugins: [],
 }
